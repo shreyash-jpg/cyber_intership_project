@@ -2,8 +2,11 @@ def caesar_cipher(text, shift, mode):
     result = ""
 
     # If we are decrypting, negate the shift.
-    if mode == 'decrypt':
+    if mode == "decrypt":
         shift = -shift
+
+    # Normalize shift so large integers behave consistently.
+    shift %= 26
 
     for char in text:
         # Encrypt/Decrypt uppercase letters
@@ -21,47 +24,31 @@ def caesar_cipher(text, shift, mode):
 
 def main():
     print("--- Caesar Cipher Tool ---")
+
     while True:
-<<<<<<< HEAD
         choice = input("\nWhat would you like to do? (encrypt/decrypt/exit): ").lower().strip()
 
-=======
-        choice = input("\n Enter Process(encrypt/decrypt/exit): ").lower().strip()
-        
->>>>>>> 5ba29179b65ba68693ae3d27003f5e4b5585a9c5
-        if choice == 'exit':
+        if choice == "exit":
             print("Goodbye!")
             break
 
-        if choice not in ['encrypt', 'decrypt']:
-<<<<<<< HEAD
+        if choice not in ["encrypt", "decrypt"]:
             print("Invalid option! Please choose 'encrypt', 'decrypt', or 'exit'.")
             continue
 
         message = input("Enter your message: ")
+
         try:
-            shift = int(input("Shift value (number): "))
+            shift = int(input("Enter shift (integer): ").strip())
         except ValueError:
-            print("Please enter a valid integer number.")
-=======
-            print("Wrong option! Please Enter'encrypt', 'decrypt' or 'exit'.")
-            continue
-            
-        message = input("Enter your Msg: ")
-        try:
-            shift = int(input("Enter Shift value (number): "))
-        except ValueError:
-            print("Please Enter valid number (integer) ")
->>>>>>> 5ba29179b65ba68693ae3d27003f5e4b5585a9c5
+            print("Please enter a valid integer shift.")
             continue
 
         output = caesar_cipher(message, shift, choice)
-        print(f"\nResult ({choice}ed): {output}")
+        label = "encrypted" if choice == "encrypt" else "decrypted"
+        print(f"\nResult ({label}): {output}")
 
 
 if __name__ == "__main__":
     main()
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ba29179b65ba68693ae3d27003f5e4b5585a9c5
