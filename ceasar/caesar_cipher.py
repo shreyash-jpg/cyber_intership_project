@@ -21,21 +21,21 @@ def caesar_cipher(text, shift, mode):
 def main():
     print("--- Caesar Cipher Tool ---")
     while True:
-        choice = input("\nKya karna chahte ho? (encrypt/decrypt/exit): ").lower().strip()
+        choice = input("\n Enter Process(encrypt/decrypt/exit): ").lower().strip()
         
         if choice == 'exit':
-            print("Alvida!")
+            print("Goodbye!")
             break
             
         if choice not in ['encrypt', 'decrypt']:
-            print("Galat option! Please 'encrypt', 'decrypt' ya 'exit' chune.")
+            print("Wrong option! Please Enter'encrypt', 'decrypt' or 'exit'.")
             continue
             
-        message = input("Apna message likho: ")
+        message = input("Enter your Msg: ")
         try:
-            shift = int(input("Shift value (number) dalo: "))
+            shift = int(input("Enter Shift value (number): "))
         except ValueError:
-            print("Please ek valid number (integer) dalo!")
+            print("Please Enter valid number (integer) ")
             continue
             
         output = caesar_cipher(message, shift, choice)
