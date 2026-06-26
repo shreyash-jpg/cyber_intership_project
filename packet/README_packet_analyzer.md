@@ -24,6 +24,10 @@ pip install scapy
 python packet/packet_analyzer.py
 ```
 
+**Screenshot:**
+
+![Packet Analyzer output](../output/packect.png)
+
 ## Run requirements (important)
 - Usually requires **Administrator** (Windows) / elevated privileges.
 

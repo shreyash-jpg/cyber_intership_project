@@ -15,6 +15,10 @@ Encrypts and decrypts text using the **Caesar Cipher** (shift-based substitution
 python ceasar/caesar_cipher.py
 ```
 
+**Screenshot:**
+
+![Caesar Cipher output](../output/ceaser.png)
+
 ## How to use
 1. Choose: `encrypt` or `decrypt` (type `exit` to quit)
 2. Enter the message

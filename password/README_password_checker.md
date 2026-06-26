@@ -18,6 +18,10 @@ Evaluates password strength based on simple criteria and prints a strength label
 python password/password_checker.py
 ```
 
+**Screenshot:**
+
+![Password Checker output](../output/password.png)
+
 ## How to use
 - Enter a password to check
 - Type `exit` to stop

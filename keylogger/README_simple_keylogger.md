@@ -21,6 +21,12 @@ pip install pynput
 python keylogger/simple_keylogger.py
 ```
 
+**Screenshot:**
+
+![Keylogger output 1](../output/key logger1.png)
+
+![Keylogger output 2](../output/key logger2.png)
+
 ## Safety / legal notice (important)
 A keylogger can be used for malicious purposes. Running this script may be blocked by your OS/antivirus and can raise legal/ethical issues.
 

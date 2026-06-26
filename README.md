@@ -3,11 +3,12 @@
 
 This folder contains 5 Python programs:
 
-1. `caesar_cipher.py` — Caesar Cipher (encrypt/decrypt)
-2. `image_encryptor.py` — Image Encryption (pixel XOR) *(Pillow required)*
-3. `packet_analyzer.py` — Network Packet Analyzer (sniffer) *(scapy required + Admin)*
-4. `password_checker.py` — Password Strength / Complexity Checker
-5. `simple_keylogger.py` — Simple Keylogger *(pynput required; security/ethical risk)*
+1. `ceasar/caesar_cipher.py` — Caesar Cipher (encrypt/decrypt)
+2. `image/image_encryptor.py` — Image Encryption (pixel XOR) *(Pillow required)*
+3. `packet/packet_analyzer.py` — Network Packet Analyzer (sniffer) *(scapy required + Admin)*
+4. `password/password_checker.py` — Password Strength / Complexity Checker
+5. `keylogger/simple_keylogger.py` — Simple Keylogger *(pynput required; security/ethical risk)*
+
 
 > **Note:** `simple_keylogger.py` is in the keylogger category. Running it may be blocked by OS/security/antivirus and can raise legal/ethical issues. Therefore, this README does not include run/verification steps for it.
 
@@ -26,7 +27,13 @@ External dependencies (optional, only for specific scripts):
 
 ---
 
-## 1) Caesar Cipher — `caesar_cipher.py`
+## 1) Caesar Cipher — `ceasar_cipher.py`
+
+**Screenshot:**
+
+![Caesar Cipher output](output/ceaser.png)
+
+
 
 **Command:**
 ```bash
@@ -65,6 +72,12 @@ python image_encryptor.py
 
 ## 3) Packet Analyzer (Sniffer) — `packet_analyzer.py`
 
+**Screenshot:**
+
+![Packet Analyzer output](output/packect.png)
+
+
+
 **Dependency:** scapy
 
 **Install:**
@@ -90,6 +103,12 @@ python packet_analyzer.py
 
 ## 4) Password Checker — `password_checker.py`
 
+**Screenshot:**
+
+![Password Checker output](output/password.png)
+
+
+
 **Command:**
 ```bash
 python password_checker.py
@@ -107,6 +126,14 @@ python password_checker.py
 ---
 
 ## 5) Keylogger — `simple_keylogger.py`
+
+**Screenshot:**
+
+![Keylogger output 1](output/key logger1.png)
+
+![Keylogger output 2](output/key logger2.png)
+
+
 
 **Dependency:** `pynput`
 
