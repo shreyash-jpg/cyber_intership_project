@@ -1,10 +1,10 @@
 def caesar_cipher(text, shift, mode):
     result = ""
-    
-    # Agar decrypt karna hai, toh shift ko negative kar denge
+
+    # If we are decrypting, negate the shift.
     if mode == 'decrypt':
         shift = -shift
-        
+
     for char in text:
         # Encrypt/Decrypt uppercase letters
         if char.isupper():
@@ -12,34 +12,37 @@ def caesar_cipher(text, shift, mode):
         # Encrypt/Decrypt lowercase letters
         elif char.islower():
             result += chr((ord(char) + shift - 97) % 26 + 97)
-        # Space ya special characters ko vaise hi chhod denge
+        # Keep spaces/special characters unchanged
         else:
             result += char
-            
+
     return result
+
 
 def main():
     print("--- Caesar Cipher Tool ---")
     while True:
-        choice = input("\nKya karna chahte ho? (encrypt/decrypt/exit): ").lower().strip()
-        
+        choice = input("\nWhat would you like to do? (encrypt/decrypt/exit): ").lower().strip()
+
         if choice == 'exit':
-            print("Alvida!")
+            print("Goodbye!")
             break
-            
+
         if choice not in ['encrypt', 'decrypt']:
-            print("Galat option! Please 'encrypt', 'decrypt' ya 'exit' chune.")
+            print("Invalid option! Please choose 'encrypt', 'decrypt', or 'exit'.")
             continue
-            
-        message = input("Apna message likho: ")
+
+        message = input("Enter your message: ")
         try:
-            shift = int(input("Shift value (number) dalo: "))
+            shift = int(input("Shift value (number): "))
         except ValueError:
-            print("Please ek valid number (integer) dalo!")
+            print("Please enter a valid integer number.")
             continue
-            
+
         output = caesar_cipher(message, shift, choice)
         print(f"\nResult ({choice}ed): {output}")
 
+
 if __name__ == "__main__":
     main()
+

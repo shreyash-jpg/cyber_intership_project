@@ -1,59 +1,64 @@
 from PIL import Image
 
+
 def process_image(image_path, output_path, key):
     try:
-        # Image open karein
+        # Open image
         img = Image.open(image_path)
         pixels = img.load()
         width, height = img.size
 
-        # Har ek pixel par XOR operation apply karein
+        # Apply XOR operation to each pixel
         for x in range(width):
             for y in range(height):
                 current_pixel = pixels[x, y]
-                
-                # Check agar image RGB hai ya RGBA
+
+                # Handle RGB or RGBA
                 if len(current_pixel) >= 3:
                     r, g, b = current_pixel[:3]
-                    # Key ke sath XOR operation (Yahi encryption aur decryption dono ka kaam karega)
+
+                    # XOR with the key (same operation works for encryption and decryption)
                     r ^= key
                     g ^= key
                     b ^= key
-                    
+
                     if len(current_pixel) == 4:
                         a = current_pixel[3]
                         pixels[x, y] = (r, g, b, a)
                     else:
                         pixels[x, y] = (r, g, b)
 
-        # Processed image ko save karein
+        # Save processed image
         img.save(output_path)
         print(f"Success! Image saved at: {output_path}")
-        
+
     except Exception as e:
         print(f"Error: {e}. Please check the file path.")
 
+
 def main():
     print("--- Image Encryption Tool (Pixel Manipulation) ---")
-    
-    mode = input("Kya karna chahte ho? (encrypt/decrypt): ").lower().strip()
+
+    mode = input("What would you like to do? (encrypt/decrypt): ").lower().strip()
     if mode not in ['encrypt', 'decrypt']:
         print("Invalid choice!")
         return
-        
-    input_path = input("Input image ka path/naam dalo (e.g., photo.jpg): ")
-    output_path = input("Output image ka naam kya rakhna hai (e.g., encrypted.jpg): ")
-    
+
+    input_path = input("Input image path/name (e.g., photo.jpg): ")
+    output_path = input("Output image name (e.g., encrypted.jpg): ")
+
     try:
-        key = int(input("Encryption Key (1-255 ke beech koi number): "))
+        key = int(input("Encryption Key (an integer between 1 and 255): "))
         if not (1 <= key <= 255):
-            print("Key 1 aur 255 ke beech honi chahiye!")
+            print("Key must be between 1 and 255.")
             return
     except ValueError:
-        print("Valid number dalo!")
+        print("Please enter a valid integer.")
         return
 
     process_image(input_path, output_path, key)
 
+
 if __name__ == "__main__":
     main()
+

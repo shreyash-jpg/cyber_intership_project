@@ -1,7 +1,7 @@
 # Image Encryptor (`image/image_encryptor.py`)
 
 ## What it does
-Encrypts/decrypts an image by applying a simple **pixel XOR** operation (same operation works for encryption and decryption).
+Encrypts/decrypts an image by applying a simple **pixel XOR** operation (the same operation works for encryption and decryption).
 
 - Each pixel’s RGB channels are XOR-ed with a single integer key `1..255`
 - If the image has an alpha channel (RGBA), alpha is preserved
@@ -30,6 +30,6 @@ python image/image_encryptor.py
 4. Provide `Encryption Key` (integer between `1` and `255`)
 
 ## Notes
-- Output file is saved using the provided output path/name.
+- The output file is saved using the provided output path/name.
 - XOR with the same key restores the original when decrypting.
 

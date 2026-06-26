@@ -8,7 +8,7 @@ Evaluates password strength based on simple criteria and prints a strength label
 - At least one uppercase letter `A-Z`
 - At least one lowercase letter `a-z`
 - At least one digit `0-9`
-- At least one special char matching `\W` or `_`
+- At least one special character matching `\W` or `_`
 
 ## File
 - `password/password_checker.py`

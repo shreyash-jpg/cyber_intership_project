@@ -1,7 +1,7 @@
 # Simple Keylogger (`keylogger/simple_keylogger.py`)
 
 ## What it does
-This script records keystrokes and writes them into `key_log.txt`. It stops when you press `ESC`.
+This script records keystrokes and writes them to `key_log.txt`. It stops when you press `ESC`.
 
 ## File
 - `keylogger/simple_keylogger.py`
