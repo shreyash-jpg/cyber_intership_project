@@ -22,13 +22,19 @@ def caesar_cipher(text, shift, mode):
 def main():
     print("--- Caesar Cipher Tool ---")
     while True:
+<<<<<<< HEAD
         choice = input("\nWhat would you like to do? (encrypt/decrypt/exit): ").lower().strip()
 
+=======
+        choice = input("\n Enter Process(encrypt/decrypt/exit): ").lower().strip()
+        
+>>>>>>> 5ba29179b65ba68693ae3d27003f5e4b5585a9c5
         if choice == 'exit':
             print("Goodbye!")
             break
 
         if choice not in ['encrypt', 'decrypt']:
+<<<<<<< HEAD
             print("Invalid option! Please choose 'encrypt', 'decrypt', or 'exit'.")
             continue
 
@@ -37,6 +43,16 @@ def main():
             shift = int(input("Shift value (number): "))
         except ValueError:
             print("Please enter a valid integer number.")
+=======
+            print("Wrong option! Please Enter'encrypt', 'decrypt' or 'exit'.")
+            continue
+            
+        message = input("Enter your Msg: ")
+        try:
+            shift = int(input("Enter Shift value (number): "))
+        except ValueError:
+            print("Please Enter valid number (integer) ")
+>>>>>>> 5ba29179b65ba68693ae3d27003f5e4b5585a9c5
             continue
 
         output = caesar_cipher(message, shift, choice)
@@ -45,4 +61,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5ba29179b65ba68693ae3d27003f5e4b5585a9c5
